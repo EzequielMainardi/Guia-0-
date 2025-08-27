@@ -1,12 +1,16 @@
-all: guia0
+CC = gcc 
+CFLAGS = -Wall -Wextra -pedantic
+TARGET = guia0
+
+all: $(TARGET)
 
 guia0: guia0.o
-			gcc -Wall -Wextra -pedantic guia0.o -o guia0
+			$(CC) $(CFLAGS) $^ -o $@
 
 guia0.o: guia0.c 
-			gcc -Wall -Wextra -pedantic -c guia0.c -o guia0.o 
+			$(CC) $(CFLAGS) -c $< -o $@ 
 
 clean: 
-			rm *.o guia0
+			rm *.o (TARGET)
 
 .PHONY: all clean
