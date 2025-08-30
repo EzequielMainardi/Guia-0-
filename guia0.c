@@ -63,7 +63,7 @@ printf("%c", decoded[i]);
 
 //ej5
 
-int main(){
+/* int main(){
     float f = 0.1;
     double d = 0.1;
     int castfi = (int) (f);
@@ -78,5 +78,122 @@ int main(){
     return 0;
 
 //al imprimir en pantalla los cast perdemos informacion ya que se imprimen enteros y perdemos el decimal.
+ */
+/* 
+ int main() {
+    int a = 5, b = 3, c = 2, d = 1;
 
+    // Operación: a + b * c / d
+    printf("a + b * c / d = %d\n", a + b * c / d);
+
+    // Operación: a % b
+    printf("a %% b = %d\n", a % b);
+
+    // Comparaciones: a == b, a != b
+    printf("a == b: %d\n", a == b);
+    printf("a != b: %d\n", a != b);
+
+    // Operadores bit a bit: a & b, a | b, ~a
+    printf("a & b = %d\n", a & b);
+    printf("a | b = %d\n", a | b);
+    printf("~a = %d\n", ~a);
+
+    // Operadores lógicos: a && b, a || b
+    printf("a && b = %d\n", a && b);
+    printf("a || b = %d\n", a || b);
+
+    // Desplazamientos: a << 1, a >> 1
+    printf("a << 1 = %d\n", a << 1);
+    printf("a >> 1 = %d\n", a >> 1);
+
+    // Operadores de asignación compuesta
+    a += b;
+    printf("a += b => a = %d\n", a);
+
+    a -= b;
+    printf("a -= b => a = %d\n", a);
+
+    a *= b;
+    printf("a *= b => a = %d\n", a);
+
+    a /= b;
+    printf("a /= b => a = %d\n", a);
+
+    a %= b;
+    printf("a %%= b => a = %d\n", a);
+
+    return 0;
+}
+ */
+ /* int main(){
+
+int i = 2;
+int resultado1;
+int resultado2;
+
+resultado1 = i++;
+printf("Valor de resultado %d \n", resultado1); //asigna valor de i al resultado y luego incrementa i
+printf("Valor de i %d \n", i);
+
+i=2;
+resultado2 = ++i;
+printf("Valor de resultado %d \n", resultado2); //incrementa valor de i y lo asigna al resultado
+printf("valor de i %d \n", i );  
+return 0;
+}
+ */
+/* #include <stdint.h>
+int main(){
+uint32_t a = 0xF0000000;
+uint32_t b = 0x00000007;
+
+uint32_t aProbar = a >> 29;
+
+printf("Valor de aProbar %d \n", aProbar);
+printf("Valor de b %d \n", b); 
+
+if (aProbar == b){
+    printf("Los 3 bits mas altos de A son iguales a los 3 mas bajos de B \n");
+}else{
+    printf("No son iguales :( \n");
+    }
+
+return 0;
+} */
+//reemplazar este ciclo while por un for
+/* int main() {
+    int i = 10;
+    while(i--){
+    printf("i = %d\n",i); // imprime o no el 0?
+    }
+    } */
+
+/* int main(){
+    for(int i=10; i>=0; i--){
+        printf("i= %d\n",i);
+    }
+    return 0;
+
+} */
+
+//ej arreglos
+
+int main(){
+    int arr[] = {1,2,3,4};
+    int length = sizeof(arr) / sizeof(arr[0]);
+    int fst = arr[0];
+
+    for(int i =0; i < length; i++){
+        if(i == (length -1)){
+            arr[i] = fst;
+        }else{
+            arr[i] = arr[i+1];
+        }
+    }
+    printf("Arreglo rotado: ");
+    for(int i = 0; i < length; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
 }
