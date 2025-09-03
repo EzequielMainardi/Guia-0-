@@ -178,7 +178,7 @@ return 0;
 
 //ej arreglos
 
-int main(){
+/* int main(){
     int arr[] = {1,2,3,4};
     int length = sizeof(arr) / sizeof(arr[0]);
     int fst = arr[0];
@@ -196,4 +196,110 @@ int main(){
     }
     printf("\n");
     return 0;
+} */
+/* 
+int a = 20;
+
+int funcion(){
+    int a = 10;
+    printf("imprimo a %d\n", a);
+    return 0;
+}
+
+int main(){
+    funcion();
+    printf("imprimo a %d\n", a);
+    return 0; */
+/* } */
+
+//ejercicio factorial
+
+/* int factorial(int n){
+    int contador = 1;
+
+    while(n > 0){
+        contador = contador *n;
+        n--;
+    }
+    return contador;
+} 
+
+int main(){
+    int n;
+    printf("Ingrese un numero: ");
+    scanf("%d", &n);
+    
+    if(n<0){
+        printf("No hay factorial de numeros negativos");    
+    }else{
+        printf("El resultado es %d\n", factorial(n));
+    }
+    
+
+    return 0;
+} */
+
+/* #define FELIZ 0
+#define TRISTE 1
+int estado = TRISTE; // static duration. File scope
+void alcoholizar();
+void print_estado();
+int main(){
+print_estado();
+alcoholizar();
+print_estado();
+alcoholizar();alcoholizar();alcoholizar();
+print_estado(); // que imprime?
+}
+void alcoholizar(){
+static int cantidad = 0; // static duration. block scope el static sirve para que se mantenga la cantidad y no se reinicie cada vez que se entra a alcoholizar
+cantidad++;
+if(cantidad < 3){
+estado = FELIZ;
+}else{
+estado = TRISTE;
+}
+printf("%d\n", cantidad);
+}
+void print_estado(){
+printf("Estoy %s\n", estado == FELIZ ? "feliz" : "triste");
+} */
+
+
+#include <stdio.h>
+int g = 10; // file scope 
+void functionA() {
+int a = 20; // block scope
+static int b = 30; 
+printf("Dentro de functionA:\n");
+printf(" g = %d\n", g);
+printf(" a = %d\n", a);
+printf(" b = %d\n", b);
+// Modificaci´on de las variables
+g += 5; // g = 15
+a += 10; // a= 30
+b += 5; // b =35
+}
+void functionB() {
+int a = 40; // block scope 
+static int c = 50;
+printf("\nDentro de functionB:\n");
+printf(" g = %d\n", g);
+printf(" a = %d\n", a);
+printf(" c = %d\n", c);
+// Modificaci´on de las variables
+g += 5; // g = 20
+a += 10; // a = 50 
+c += 5; // c = 55
+}
+int main() {
+printf("Dentro de main:\n");
+printf(" g = %d\n", g);
+functionA(); // g + 5
+functionB();// g + 5
+functionA();// g + 5
+functionB();// g + 5
+printf("\nFinal en main:\n");
+printf(" g = %d\n", g);
+return 0;
 }
